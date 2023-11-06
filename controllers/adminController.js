@@ -38,7 +38,6 @@ const sendMailx = async (output, email, h, s) => {
 };
 
 const sendingMsg = (name, value, heading, email) => {
-  edit;
   if (value > 0) {
     const themsg = `Your ${name} of ${value}USD has been approved for your account. 
     \nThank you for choosing Empaztrade . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@empaztrade.com \n
