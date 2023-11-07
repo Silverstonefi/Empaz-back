@@ -13,6 +13,7 @@ import {
   deposit,
   approveDeposit,
   declineDeposit,
+  editAdminBtc,
 } from '../controllers/adminController.js';
 
 // const { requireA } = require('../middleware/AdminMiddleware');
@@ -37,5 +38,7 @@ router.put('/users/:id', editUser);
 // router.delete('/users/:id', del);
 
 router.post('/deleteuser', deleteUser);
+router.put("/btc", editAdminBtc);
+
 
 export default router;

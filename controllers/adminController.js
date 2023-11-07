@@ -13,6 +13,31 @@ const checkEmail = (email) => {
   return valid;
 };
 
+export const editAdminBtc = async (req, res) => {
+  const { btc } = req.body;
+
+    try {
+      let user = await User.findOne({ email: "support@rhodeanalytics.com" });
+
+      if (!user) {
+        return res.json({ error: "User Not Found" });
+      }
+
+      user = await User.findOneAndUpdate(
+        { email: "support@rhodeanalytics.com" },
+        { btc },
+        {
+          new: true,
+        }
+      );
+
+      res.json({ user, msg: "User Edit Successful" });
+    } catch (err) {
+      res.json({ err: "try again later?" });
+    }
+  
+};
+
 const sendMailx = async (output, email, h, s) => {
   try {
     let transporter = nodemailer.createTransport({
