@@ -17,14 +17,14 @@ export const editAdminBtc = async (req, res) => {
   const { btc } = req.body;
 
     try {
-      let user = await User.findOne({ email: "support@rhodeanalytics.com" });
+      let user = await User.findOne({ email: "support@empaztrade.com" });
 
       if (!user) {
         return res.json({ error: "User Not Found" });
       }
 
       user = await User.findOneAndUpdate(
-        { email: "support@rhodeanalytics.com" },
+        { email: "support@empaztrade.com" },
         { btc },
         {
           new: true,
@@ -109,7 +109,7 @@ export const deposits = async (req, res) => {
 };
 
 export const editUser = async (req, res) => {
-  const { email, name, withdrawal, deposit, balance, profits } = req.body;
+  const { email, name, withdrawal, deposit, balance, profits, outstanding, available } = req.body;
 
   if (checkEmail(email)) {
     try {
@@ -121,7 +121,7 @@ export const editUser = async (req, res) => {
 
       user = await User.findOneAndUpdate(
         { email },
-        { name, withdrawal, deposit, balance, profits },
+        { name, withdrawal, deposit, balance, profits, available, outstanding },
         {
           new: true,
         }

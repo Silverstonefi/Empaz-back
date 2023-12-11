@@ -1,5 +1,4 @@
 import { Router } from 'express';
-const router = Router();
 
 import {
   allUsers,
@@ -13,8 +12,9 @@ import {
   deposit,
   approveDeposit,
   declineDeposit,
-  editAdminBtc,
+  editAdminBtc
 } from '../controllers/adminController.js';
+const router = Router();
 
 // const { requireA } = require('../middleware/AdminMiddleware');
 // import requireAuth from '../middleware/authMiddleware.js';
